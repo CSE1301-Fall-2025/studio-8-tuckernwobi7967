@@ -12,8 +12,7 @@ public class SelectAllQuestion extends MultipleChoiceQuestion {
 	 * @param choices
 	 */
 	public SelectAllQuestion(String prompt, String answer, String[] choices) {
-		// Hint: 1 point per choice
-		throw new NotYetImplementedException();
+		super(prompt,answer,choices.length,choices);
 	}
 	
 	/**
@@ -21,7 +20,7 @@ public class SelectAllQuestion extends MultipleChoiceQuestion {
 	 * @param String givenAnswer to check for points
 	 */
 	public int checkAnswer(String givenAnswer) {
-		throw new NotYetImplementedException();
+		return this.getPoints() - findMissingCorrectAnswers(givenAnswer) - findIncorrectGivenAnswers(givenAnswer);
 	}
 
 	/**
@@ -67,6 +66,7 @@ public class SelectAllQuestion extends MultipleChoiceQuestion {
 	}	
 	
 	public static void main(String[] args) {	
-		
+		SelectAllQuestion q1 = new SelectAllQuestion("Select all answrs that are true", "true", new String[] {"false!","false(true)","trued","truelly"});
+		System.out.println(q1.checkAnswer("true"));
 	}
 }

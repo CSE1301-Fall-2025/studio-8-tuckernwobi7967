@@ -3,6 +3,10 @@ package studio8;
 import support.cse131.NotYetImplementedException;
 
 public class Question {
+
+	String prompt;
+	String answer;
+	int points;
 	
 	/**
 	 * Constructor
@@ -11,7 +15,9 @@ public class Question {
 	 * @param points
 	 */
 	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+		this.prompt = prompt;
+		this.answer = answer;
+		this.points = points;
 	}
 	
 	/**
@@ -40,7 +46,7 @@ public class Question {
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		return points;
 	}
 	
 	/**
@@ -48,10 +54,12 @@ public class Question {
 	 * @return String answer
 	 */
 	public String getAnswer() {
-		throw new NotYetImplementedException();
+		return answer;
 	}
 	
 	public static void main(String[] args) {
-		// TODO: Create a Question object of your own!
+		Question q1 = new Question("My name?", "Andrew", 5);
+		q1.displayPrompt();
+		q1.checkAnswer("Andrew");
 	}
 }
