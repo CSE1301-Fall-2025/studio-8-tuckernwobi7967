@@ -19,6 +19,7 @@ public class SelectAllQuestion extends MultipleChoiceQuestion {
 	 * Returns the amount of points scored by a provided givenAnswer
 	 * @param String givenAnswer to check for points
 	 */
+	@Override
 	public int checkAnswer(String givenAnswer) {
 		return this.getPoints() - findMissingCorrectAnswers(givenAnswer) - findIncorrectGivenAnswers(givenAnswer);
 	}

@@ -55,7 +55,7 @@ public class Quiz {
 			totalPoints += pointsEarned;
 			System.out.println("You earned " + pointsEarned + " points");
 		}
-		System.out.println("You have earned " + totalPoints + "/" + getTotalPoints());
+		System.out.println("You have earned " + totalPoints + " points /" + getTotalPoints() + " points");
 
 	}
 	
